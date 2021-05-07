@@ -1,0 +1,18 @@
+body{
+  background-color: #f7f3e9;
+}
+
+.navbar-center{
+  position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+*{
+  font-family: 'Trebuchet MS', sans-serif;
+}
+.navbar-brand
+{
+    padding-top: 0;
+    margin-top:0;
+}
