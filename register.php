@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>HTML CSS Register Form</title>
-    <?php include "navbar.php";?>
-      <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
     <form class="signup-form" action="/register" method="post">
@@ -21,40 +20,29 @@
         <div class="horizontal-group">
           <div class="form-group left">
             <label for="firstname" class="label-title">First name *</label>
-            <input type="text" id="firstname" class="form-input" placeholder="enter your first name" required="required" />
+            <input type="text" id="firstname" class="form-input"  required>
           </div>
           <div class="form-group right">
             <label for="lastname" class="label-title">Last name</label>
-            <input type="text" id="lastname" class="form-input" placeholder="enter your last name" />
+            <input type="text" id="lastname" class="form-input">
           </div>
         </div>
 
         <!-- Email -->
         <div class="form-group">
           <label for="email" class="label-title">Email*</label>
-          <input type="email" id="email" class="form-input" placeholder="enter your email" required="required">
+          <input type="email" id="email" class="form-input"  required>
         </div>
 
         <!-- Passwrod and confirm password -->
         <div class="horizontal-group">
           <div class="form-group left">
             <label for="password" class="label-title">Password *</label>
-            <input type="password" id="password" class="form-input" placeholder="enter your password" required="required">
+            <input type="password" id="password" class="form-input"  required>
           </div>
           <div class="form-group right">
             <label for="confirm-password" class="label-title">Confirm Password *</label>
-            <input type="password" class="form-input" id="confirm-password" placeholder="enter your password again" required="required">
-          </div>
-        </div>
-
-        <!-- Gender and Hobbies -->
-        <div class="horizontal-group">
-          <div class="form-group left">
-            <label class="label-title">Gender:</label>
-            <div class="input-group">
-              <label for="male"><input type="radio" name="gender" value="male" id="male"> Male</label>
-              <label for="female"><input type="radio" name="gender" value="female" id="female"> Female</label>
-            </div>
+            <input type="password" class="form-input" id="confirm-password"  required>
           </div>
         </div>
 
@@ -62,11 +50,13 @@
 
       <!-- form-footer -->
       <div class="form-footer">
-        <span>* required</span>
-        <button type="submit" class="btn">Create</button>
+        <span>* Required</span>
+        <button type="submit" class="btn">Create</button><br>
+        <a href="login.php" style="margin-right:170px;">Already a user? Login here.</a>
       </div>
-
     </form>
+
+
 
     <!-- Script for range input label -->
     <script>
@@ -79,7 +69,8 @@
     </script>
     <style>
     body {
-      background:linear-gradient(to right, #78a7ba 0%, #385D6C 50%, #78a7ba 99%);
+      /*background:linear-gradient(to right, #78a7ba 0%, #385D6C 50%, #78a7ba 99%);*/
+      background-color: #a3d2ca;
     }
 
     .signup-form {
@@ -203,6 +194,10 @@
     .btn:hover {
       background-color: #169c7b;
       color:white;
+    }
+
+    a{
+      color: #f05945;
     }
 </style>
 

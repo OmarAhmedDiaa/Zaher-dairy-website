@@ -17,7 +17,6 @@
         <ul class="nav navbar-nav">
           <li><a href="home.php">Home</a></li>
           <li><a href="products.php">Products</a></li>
-          <li><a href="contact.php">Contact Us</a></li>
           <li><a href="about.php">About Us</a></li>
         </ul>
         <form class="navbar-form navbar-center" action="#">
@@ -31,10 +30,10 @@
           </div>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+          <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>
+          <li><a href="account.php"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
           <li ><a href="login.php">Log In</a></li>
-          <li><a href="#">Register</a></li>
+          <li><a href="register.php">Register</a></li>
         </ul>
       </div>
     </nav>

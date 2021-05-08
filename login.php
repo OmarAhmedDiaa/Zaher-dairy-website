@@ -11,12 +11,12 @@
 
       <h2 class="login-header">Log in</h2>
 
-      <form class="login-container">
+      <form action="home.php" class="login-container">
         <p><input type="email" placeholder="Email"></p>
         <p><input type="password" placeholder="Password"></p>
         <p><input type="submit" value="Log in"></p>
         <p style="text-align:center;">Don't have an account?</p>
-        <a href="signup.php" style="margin-left:140px;"><u>Sign Up Here</u></a>
+        <a href="register.php" style="margin-left:140px;"><u>Sign Up Here</u></a>
       </form>
 
     </div>

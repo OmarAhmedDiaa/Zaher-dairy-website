@@ -11,7 +11,7 @@
     <?php include "navbar.php"; ?>
   </head>
   <body>
-    <div class="container-fluid1 bg-grey">
+    <div class="container-fluid1 bg-grey" style="margin-top:120px;margin-left">
       <h2 class="text-center">CONTACT</h2>
       <div class="row">
         <div class="col-sm-5">
