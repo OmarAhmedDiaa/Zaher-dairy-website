@@ -16,7 +16,7 @@
         <p><input type="password" placeholder="Password"></p>
         <p><input type="submit" value="Log in"></p>
         <p style="text-align:center;">Don't have an account?</p>
-        <a href="register.php" style="margin-left:140px;"><u>Sign Up Here</u></a>
+        <a href="reg.php" style="margin-left:140px;"><u>Sign Up Here</u></a>
       </form>
 
     </div>
@@ -115,3 +115,17 @@
   border-color: #05a;
   }
 </style>
+<?php
+
+if (isset($_POST['submit']))
+{
+  include "db.php";
+  query= SELECT FROM
+  
+  $email=$_POST['email'];
+  $password=$_POST['password'];
+  
+  $obj=new database();
+  $obj->records($fname,$lname,$email,$password);
+}
+  ?>
