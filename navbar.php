@@ -33,7 +33,7 @@
           <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>
           <li><a href="account.php"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
           <li ><a href="login.php">Log In</a></li>
-          <li><a href="register.php">Register</a></li>
+          <li><a href="reg.php">Register</a></li>
         </ul>
       </div>
     </nav>
