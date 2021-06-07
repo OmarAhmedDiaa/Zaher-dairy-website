@@ -22,18 +22,18 @@
           <div class="panel panel-primary">
             <div class="panel-heading">1/2 Kg Cheddar Cheese</div>
             <div class="panel-body"><img src="pics/cheddar.jpg" class="img-responsive" style="width:67%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+            <div class="panel-footer">50% OFF : 40 LE</div>
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="panel panel-danger">
+          <div class="panel panel-primary">
             <div class="panel-heading">Rice Pudding</div>
             <div class="panel-body"><img src="pics/roz.jpg" class="img-responsive" style="max-width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+            <div class="panel-footer">15 LE</div>
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="panel panel-success">
+          <div class="panel panel-primary">
             <div class="panel-heading">Molten Cake</div>
             <div class="panel-body"><img src="pics/molten.jfif" class="img-responsive" style="max-width:89%" alt="Image"></div>
             <div class="panel-footer">30 LE</div>
@@ -42,15 +42,6 @@
       </div>
     </div>
     <br>
-    <footer class="container-fluid text-center">
-      <br>
-      <p>Zaher Dairy Copyright</p>
-      <form class="form-inline">Get deals:
-        <input type="email" class="form-control" size="50" placeholder="Email Address">
-        <button type="button" class="btn btn-danger">Sign Up</button>
-      </form>
-      <br>
-    </footer>
   </body>
 </html>
 

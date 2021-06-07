@@ -120,11 +120,10 @@
 if (isset($_POST['submit']))
 {
   include "db.php";
-  query= SELECT FROM
-  
+
   $email=$_POST['email'];
   $password=$_POST['password'];
-  
+
   $obj=new database();
   $obj->records($fname,$lname,$email,$password);
 }
