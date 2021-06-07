@@ -17,7 +17,7 @@
     function register()
     {
       $this->create_connection();
-      
+
     }
   }
 
@@ -41,18 +41,18 @@
 
   class Employee extends Person
   {
-    function addProduct();
+    function addProduct(){}
 
-    function editProduct();
+    function editProduct(){}
 
-    function deleteProduct();
+    function deleteProduct(){}
   }
 
   class Admin extends Person
   {
-    function addEmployee();
+    function addEmployee(){}
 
-    function deleteEmployee();
+    function deleteEmployee(){}
   }
 
   class Product

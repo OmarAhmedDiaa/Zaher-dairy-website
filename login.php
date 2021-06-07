@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <?php include "navbar.php";?>
     <meta charset="utf-8">
     <title>Log In</title>
     <link rel="stylesheet" href="main.css">
@@ -12,23 +13,31 @@
       <h2 class="login-header">Log in</h2>
 
       <form action="home.php" class="login-container">
-        <p><input type="email" placeholder="Email"></p>
-        <p><input type="password" placeholder="Password"></p>
+        <p><input type="email" name="email" placeholder="Email"></p>
+        <p><input type="password" name="password" placeholder="Password"></p>
         <p><input type="submit" value="Log in"></p>
         <p style="text-align:center;">Don't have an account?</p>
-        <a href="reg.php" style="margin-left:140px;"><u>Sign Up Here</u></a>
+        <a href="reg.php" style="text-align:center; margin-left:15px;"><u>Sign Up Here</u></a>
       </form>
-
     </div>
   </body>
 </html>
+
+<?php
+			include "classes.php";
+			session_start();
+			if (isset($_POST['submit'])){
+				$_SESSION['email'] = $_POST['email'];
+			  $x = new Customer();
+				$x->login($_POST['username'], $_POST['password']);
+			}
+		?>
 
 <style media="screen">
   @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
   body {
-  background: #a3d2ca;
-  font-family: 'Open Sans', sans-serif;
+  background: #5eaaa8;
   }
 
   .login {
@@ -107,7 +116,7 @@
   }
 
   .login input[type="submit"]:hover {
-  background: #17c;
+  background: #a3d2ca;
   }
 
   /* Buttons' focus effect */

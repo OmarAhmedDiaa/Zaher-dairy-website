@@ -5,8 +5,10 @@
     <title>Register</title>
     <?php include "navbar.php";?>
       <link rel="stylesheet" href="main.css">
+
   </head>
   <body>
+    <br><br><br>
     <form class="signup-form"  method="post">
 
       <!-- form header -->
@@ -20,50 +22,72 @@
         <!-- Firstname and Lastname -->
         <div class="horizontal-group">
           <div class="form-group left">
-            <label for="firstname" class="label-title">First name *</label>
-            <input type="text"  name="fname" class="form-input" placeholder="enter your first name" required="required" />
+            <label class="label-title">Full Name</label>
+            <input type="text"  name="fname" class="form-input" required/>
           </div>
           <div class="form-group right">
-            <label for="lastname" class="label-title">Last name</label>
-            <input type="text" id="lastname" name="lname" class="form-input" placeholder="enter your last name" />
+            <label class="label-title">Email</label>
+            <input type="email" class="form-input" required/>
           </div>
         </div>
 
         <!-- Email -->
-        <div class="form-group">
-          <label for="email" class="label-title">Email*</label>
-          <input type="email" id="email" name="email" class="form-input" placeholder="enter your email" required="required">
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label class="label-title">Address</label>
+            <input type="text"  name="fname" class="form-input" required/>
+          </div>
+          <div class="form-group right">
+            <label class="label-title">Mobile Number</label>
+            <input type="number"  name="fname" class="form-input" required/>
+          </div>
         </div>
 
         <!-- Passwrod and confirm password -->
         <div class="horizontal-group">
           <div class="form-group left">
-            <label for="password" class="label-title">Password *</label>
-            <input type="password" id="password" name="password" class="form-input" placeholder="enter your password" required="required">
+            <label for="password" class="label-title">Password</label>
+            <input type="password" name="password" class="form-input" required>
           </div>
           <div class="form-group right">
-
-          </div>
-        </div>
-
-        <!-- Gender and Hobbies -->
-        <div class="horizontal-group">
-          <div class="form-group left">
-            
-            <div class="input-group">
-              
-            </div>
+            <label for="password" class="label-title">Confirm Password</label>
+            <input type="password" name="password" class="form-input" required>
           </div>
         </div>
 
       </div>
 
       <!-- form-footer -->
-      <div class="form-footer">
-        <span>* required</span>
-        <button type="submit" class="submit" name="submit">submit</button>
-      </div>
+      <div class="form-group">
+        <input type="submit" name="submit" value="Register">
+        <style media="screen">
+          input[type=submit]
+          {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #5eaaa8;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+          }
 
+          input[type=submit]:hover {background-color: #a3d2ca}
+
+          input[type=submit]:active {
+            background-color: #5eaaa8;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+          }
+
+        </style>
+      </div>
+      <br>
     </form>
 
     <!-- Script for range input label -->
@@ -77,7 +101,7 @@
     </script>
     <style>
     body {
-      background:linear-gradient(to right, #78a7ba 0%, #385D6C 50%, #78a7ba 99%);
+      background: #5eaaa8;
     }
 
     .signup-form {
@@ -186,22 +210,6 @@
       font-style: italic;
       font-weight: thin;
     }
-
-    .btn {
-       display:inline-block;
-       padding:10px 20px;
-       background-color: #1BBA93;
-       font-size:17px;
-       border:none;
-       border-radius:5px;
-       color:#bcf5e7;
-       cursor:pointer;
-    }
-
-    .btn:hover {
-      background-color: #169c7b;
-      color:white;
-    }
 </style>
 
   </body>
@@ -215,9 +223,8 @@ if (isset($_POST['submit']))
   $lname=$_POST['lname'];
   $email=$_POST['email'];
   $password=$_POST['password'];
-  
+
   $obj=new database();
   $obj->records($fname,$lname,$email,$password);
 }
   ?>
-
