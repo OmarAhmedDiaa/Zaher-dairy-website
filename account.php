@@ -13,6 +13,17 @@
     <br><br>
     <h1>Account Information</h1>
     <span class="glyphicon glyphicon-user" style="font-size:150px;"></span>
+    <?php
+
+      //To get Session variables
+      ob_start();
+      include "login.php";
+      $data = ob_get_clean();
+
+      $x = new Customer();
+      $x->viewAccount($_SESSION['email']);
+
+    ?>
   </body>
 </html>
 

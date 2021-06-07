@@ -29,7 +29,7 @@
 			if (isset($_POST['submit'])){
 				$_SESSION['email'] = $_POST['email'];
 			  $x = new Customer();
-				$x->login($_POST['username'], $_POST['password']);
+				$x->login($_POST['email'], $_POST['password']);
 			}
 		?>
 
@@ -37,103 +37,90 @@
   @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
   body {
-  background: #5eaaa8;
+    background: #5eaaa8;
   }
 
   .login {
-  width: 400px;
-  margin: 16px auto;
-  font-size: 16px;
-  margin-top:10%;
+    width: 400px;
+    margin: 16px auto;
+    font-size: 16px;
+    margin-top:10%;
   }
 
   /* Reset top and bottom margins from certain elements */
   .login-header,
   .login p {
-  margin-top: 0;
-  margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   /* The triangle form is achieved by a CSS hack */
   .login-triangle {
-  width: 0;
-  margin-right: auto;
-  margin-left: auto;
-  border: 12px solid transparent;
-  border-bottom-color: #f05945;
+    width: 0;
+    margin-right: auto;
+    margin-left: auto;
+    border: 12px solid transparent;
+    border-bottom-color: #f05945;
   }
 
   .login-header {
-  background: #f05945;
-  padding: 20px;
-  font-size: 1.4em;
-  font-weight: normal;
-  text-align: center;
-  text-transform: uppercase;
-  color: #fff;
+    background: #f05945;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
   }
 
   .login-container {
-  background: #ebebeb;
-  padding: 12px;
+    background: #ebebeb;
+    padding: 12px;
   }
 
   /* Every row inside .login-container is defined with p tags */
   .login p {
-  padding: 12px;
+    padding: 12px;
   }
 
   .login input {
-  box-sizing: border-box;
-  display: block;
-  width: 100%;
-  border-width: 1px;
-  border-style: solid;
-  padding: 16px;
-  outline: 0;
-  font-family: inherit;
-  font-size: 0.95em;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
   }
 
   .login input[type="email"],
   .login input[type="password"] {
-  background: #fff;
-  border-color: #bbb;
-  color: #555;
+    background: #fff;
+    border-color: #bbb;
+    color: #555;
   }
 
   /* Text fields' focus effect */
   .login input[type="email"]:focus,
   .login input[type="password"]:focus {
-  border-color: #888;
+    border-color: #888;
   }
 
   .login input[type="submit"] {
-  background: #f05945;
-  border-color: transparent;
-  color: #fff;
-  cursor: pointer;
+    background: #f05945;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
   }
 
   .login input[type="submit"]:hover {
-  background: #a3d2ca;
+    background: #a3d2ca;
   }
 
   /* Buttons' focus effect */
   .login input[type="submit"]:focus {
-  border-color: #05a;
+    border-color: #05a;
   }
 </style>
-<?php
-
-if (isset($_POST['submit']))
-{
-  include "db.php";
-
-  $email=$_POST['email'];
-  $password=$_POST['password'];
-
-  $obj=new database();
-  $obj->records($fname,$lname,$email,$password);
-}
-  ?>
