@@ -26,8 +26,9 @@
 <?php
 			include "classes.php";
 			session_start();
-			if (isset($_POST['submit'])){
-				$_SESSION['email'] = $_POST['email'];
+      $_SESSION['email'] = $_POST['email'];
+			if (isset($_POST['submit']))
+      {
 			  $x = new Customer();
 				$x->login($_POST['email'], $_POST['password']);
 			}

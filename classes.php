@@ -44,27 +44,20 @@
     {
       $this->create_connection();
       $result = mysqli_query($this->conn,"SELECT * FROM person WHERE Email ='$email'");
-      echo "<table border='1'>
-      <tr>
-      <th>Full Name</th>
-      <th>Email</th>
-      <th>Password</th>
-      <th>Mobile</th>
-      <th>Address</th>
-      </tr>";
+      $sql = "SELECT name, email FROM users";
+      $result = $this->conn->query($sql);
 
-      while($row = mysqli_fetch_array($result))
+      if ($result->num_rows > 0)
       {
-        echo "<tr>";
-        echo "<td>" . $row['FirstName'] . "</td>";
-        echo "<td>" . $row['Email'] . "</td>";
-        echo "<td>" . $row['Password'] . "</td>";
-        echo "<td>" . $row['Mobile'] . "</td>";
-        echo "<td>" . $row['Address'] . "</td>";
-        echo "</tr>";
+        // output data of each row
+        while($row = $result->fetch_assoc())
+          echo "Name: " . $row["name"]. "<br> Email: " . $row["email"]. "<br>";
       }
 
-      echo "</table>";
+      else {
+        echo "Please log in to view your account.";
+      }
+      $this->conn->close();
 
     }
 

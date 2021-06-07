@@ -20,8 +20,9 @@
       include "login.php";
       $data = ob_get_clean();
 
+      $y = $_SESSION['email'];
       $x = new Customer();
-      $x->viewAccount($_SESSION['email']);
+      $x->viewAccount($y);
 
     ?>
   </body>
