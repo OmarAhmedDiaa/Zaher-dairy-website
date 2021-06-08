@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2021 at 01:23 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.2.24
+-- Generation Time: Jun 09, 2021 at 01:57 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -92,6 +91,19 @@ CREATE TABLE `products` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tblcontact`
+--
+
+CREATE TABLE `tblcontact` (
+  `contact_id` int(11) NOT NULL,
+  `user_name` varchar(100) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -146,6 +158,12 @@ ALTER TABLE `products`
   ADD KEY `cat_fk` (`category_id`);
 
 --
+-- Indexes for table `tblcontact`
+--
+ALTER TABLE `tblcontact`
+  ADD PRIMARY KEY (`contact_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -184,6 +202,12 @@ ALTER TABLE `order_details`
 --
 ALTER TABLE `products`
   MODIFY `id` int(12) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tblcontact`
+--
+ALTER TABLE `tblcontact`
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `users`
