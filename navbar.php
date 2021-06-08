@@ -17,7 +17,9 @@
         <ul class="nav navbar-nav">
           <li><a href="home.php">Home</a></li>
           <li><a href="products.php">Products</a></li>
+          <li><a href="promotions.php">Promotions</a></li>
           <li><a href="about.php">About Us</a></li>
+         
         </ul>
         <form class="navbar-form navbar-center" action="#">
           <div class="input-group">
@@ -34,6 +36,8 @@
           <li><a href="account.php"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
           <li ><a href="login.php">Log In</a></li>
           <li><a href="reg.php">Register</a></li>
+          <li><a href="login.php">Logout</a></li>
+          
         </ul>
       </div>
     </nav>
