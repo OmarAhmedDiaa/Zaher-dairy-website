@@ -100,9 +100,6 @@
       }
     </script>
     <style>
-    body {
-      background: #5eaaa8;
-    }
 
     .signup-form {
       font-family: "Roboto", sans-serif;
@@ -116,7 +113,7 @@
     /* Form Header */
     /*---------------------------------------*/
     .form-header  {
-      background-color: #EFF0F1;
+      background-color: #5eaaa8;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
     }
@@ -124,7 +121,7 @@
     .form-header h1 {
       font-size: 30px;
       text-align:center;
-      color:#666;
+      color:white;
       padding:50px 0;
       border-bottom:5px solid #cccccc;
     }
@@ -155,7 +152,7 @@
         padding-left: 10px;
         padding-right: 10px;
         color: #333333;
-        text-align: left;
+        text-align: center;
         border: 1px solid #d6d6d6;
         border-radius: 4px;
         background: white;
@@ -174,42 +171,7 @@
       width:49%;
     }
 
-    #range-label {
-      width:15%;
-      padding:5px;
-      background-color: #1BBA93;
-      color:white;
-      border-radius: 5px;
-      font-size: 17px;
-      position: relative;
-      top:-8px;
-    }
 
-
-    ::-webkit-input-placeholder  {
-      color:#d9d9d9;
-    }
-
-    /*---------------------------------------*/
-    /* Form Footer */
-    /*---------------------------------------*/
-    .signup-form .form-footer  {
-      background-color: #EFF0F1;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      padding:10px 40px;
-      text-align: right;
-      border-top: 1px solid #cccccc;
-      clear:both;
-    }
-
-    .form-footer span {
-      float:left;
-      margin-top: 10px;
-      color:#999;
-      font-style: italic;
-      font-weight: thin;
-    }
 </style>
 
   </body>

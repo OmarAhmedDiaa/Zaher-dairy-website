@@ -77,15 +77,6 @@ if(!empty($_POST["send"])) {
     font-size: 25px;
   }
 
-  body{
-    background-color: #a3d2ca;
-  }
-
-  footer{
-    background-color: #5eaaa8;
-    color:white;
-}
-
 input[type=submit]
 {
 	display: inline-block;

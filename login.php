@@ -7,19 +7,62 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <div class="login">
-      <div class="login-triangle"></div>
+    <br><br><br><br>
+    <form class="signup-form"  method="post">
 
-      <h2 class="login-header">Log in</h2>
+      <!-- form header -->
+      <div class="form-header">
+        <h1>Log In</h1>
+      </div>
 
-      <form action="home.php" class="login-container">
-        <p><input type="email" name="email" placeholder="Email"></p>
-        <p><input type="password" name="password" placeholder="Password"></p>
-        <p><input type="submit" value="Log in"></p>
-        <p style="text-align:center;">Don't have an account?</p>
-        <a href="reg.php" style="text-align:center; margin-left:9px;"><u>Sign Up Here</u></a>
-      </form>
-    </div>
+      <!-- form body -->
+      <div class="form-body">
+
+        <!-- Firstname and Lastname -->
+        <div class="horizontal-group">
+            <label class="label-title">Email</label><br>
+            <input type="text"  name="email" class="form-input" required/>
+        </div>
+        <br>
+        <div class="horizontal-group">
+          <label for="password" class="label-title">Password</label><br>
+          <input type="password" name="password" class="form-input" required>
+        </div>
+
+      </div>
+
+      <!-- form-footer -->
+      <div class="form-group">
+        <input type="submit" name="submit" value="Log In">
+        <style media="screen">
+          input[type=submit]
+          {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #f05945;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+          }
+
+          input[type=submit]:hover {background-color: #5eaaa8}
+
+          input[type=submit]:active {
+            background-color: #5eaaa8;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+          }
+
+        </style>
+      </div>
+      <br>
+    </form>
   </body>
 </html>
 
@@ -38,91 +81,77 @@
 <style media="screen">
   @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-  body {
-    background: #5eaaa8;
+
+  .signup-form {
+    font-family: "Roboto", sans-serif;
+    width:650px;
+    margin:30px auto;
+    background:linear-gradient(to right, #ffffff 0%, #fafafa 50%, #ffffff 99%);
+    border-radius: 10px;
   }
 
-  .login {
-    width: 400px;
-    margin: 16px auto;
-    font-size: 16px;
-    margin-top:10%;
+  /*---------------------------------------*/
+  /* Form Header */
+  /*---------------------------------------*/
+  .form-header  {
+    background-color: #f05945;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 
-  /* Reset top and bottom margins from certain elements */
-  .login-header,
-  .login p {
-    margin-top: 0;
-    margin-bottom: 0;
+  .form-header h1 {
+    font-size: 30px;
+    text-align:center;
+    color:white;
+    padding:50px 0;
+    border-bottom:5px solid #cccccc;
   }
 
-  /* The triangle form is achieved by a CSS hack */
-  .login-triangle {
-    width: 0;
-    margin-right: auto;
-    margin-left: auto;
-    border: 12px solid transparent;
-    border-bottom-color: #f05945;
+  /*---------------------------------------*/
+  /* Form Body */
+  /*---------------------------------------*/
+  .form-body {
+    padding:20px 40px;
+    color:#666
   }
 
-  .login-header {
-    background: #f05945;
-    padding: 20px;
-    font-size: 1.4em;
-    font-weight: normal;
-    text-align: center;
-    text-transform: uppercase;
-    color: #fff;
+  .form-group{
+    margin-bottom:20px;
   }
 
-  .login-container {
-    background: #ebebeb;
-    padding: 12px;
+  .form-body .label-title {
+    color:#f05945;
+    font-size: 17px;
+    font-weight: bold;
   }
 
-  /* Every row inside .login-container is defined with p tags */
-  .login p {
-    padding: 12px;
+  .form-body .form-input {
+      font-size: 17px;
+      box-sizing: border-box;
+      width: 50%;
+      height: 34px;
+      padding-left: 10px;
+      padding-right: 10px;
+      color: #333333;
+      text-align: center;
+      border: 1px solid #d6d6d6;
+      border-radius: 4px;
+      background: white;
+      outline: none;
   }
 
-  .login input {
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-    border-width: 1px;
-    border-style: solid;
-    padding: 16px;
-    outline: 0;
-    font-family: inherit;
-    font-size: 0.95em;
+
+
+  .horizontal-group .left{
+    float:left;
+    width:49%;
   }
 
-  .login input[type="email"],
-  .login input[type="password"] {
-    background: #fff;
-    border-color: #bbb;
-    color: #555;
+  .horizontal-group .right{
+    float:right;
+    width:49%;
   }
 
-  /* Text fields' focus effect */
-  .login input[type="email"]:focus,
-  .login input[type="password"]:focus {
-    border-color: #888;
-  }
 
-  .login input[type="submit"] {
-    background: #f05945;
-    border-color: transparent;
-    color: #fff;
-    cursor: pointer;
-  }
 
-  .login input[type="submit"]:hover {
-    background: #a3d2ca;
-  }
-
-  /* Buttons' focus effect */
-  .login input[type="submit"]:focus {
-    border-color: #05a;
-  }
 </style>
