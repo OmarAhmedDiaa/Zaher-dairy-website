@@ -16,7 +16,7 @@
         </div>
         <ul class="nav navbar-nav">
           <li><a href="empHome.php">Home</a></li>
-          <li> <a href="employees.php">Product Database</a> </li>
+          <li> <a href="productDB.php">Product Database</a> </li>
           <li> <a href="inquiries.php">Inquiries</a> </li>
           <li><a href="login.php">Logout</a></li>
         </ul>
