@@ -36,6 +36,9 @@ if(!empty($_POST["send"])) {
           <p><span class="glyphicon glyphicon-earphone"></span> 19360</p>
           <p><span class="glyphicon glyphicon-phone"></span> +20 011 299 83 813</p>
           <p><span class="glyphicon glyphicon-envelope"></span> wecare@zaherdairy.com</p>
+					<a href="https://www.facebook.com/ZaherDairy/?ref=page_internal"><i class="fa fa-facebook-square"></i>
+          <a href="https://twitter.com/zaherdairy?lang=en"><i class="fa fa-twitter"></i>
+          <a href="https://www.instagram.com/zaherdairy/?hl=en"><i class="fa fa-instagram"></i>
 
         </div>
         <div class="col-lg-6">
@@ -50,6 +53,7 @@ if(!empty($_POST["send"])) {
                             <input name="email" id="email" type="email" class="form-control" placeholder="Your Email" />
                         </div>
                     </div>
+										<br>
                     <div class="form-group">
                         <textarea name="message" id="message" class="form-control" rows="5" placeholder="Message"></textarea>
                     </div>
@@ -65,15 +69,6 @@ if(!empty($_POST["send"])) {
     <div class="col-lg-12">
         <div class="contact-map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13797.378831059943!2d31.4918564!3d30.1701457!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1b138aefe2d8bedb!2sMisr%20International%20University!5e0!3m2!1sen!2seg!4v1614202004491!5m2!1sen!2seg" width="1500" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
-    <footer class="container-fluid text-center">
-      <br>
-      <p>Zaher Dairy Copyright</p>
-      <form class="form-inline">Get deals:
-        <input type="email" class="form-control" size="50" placeholder="Email Address">
-        <button type="button" class="btn btn-danger">Sign Up</button>
-      </form>
-      <br>
-    </footer>
   </body>
 </html>
 
@@ -89,5 +84,30 @@ if(!empty($_POST["send"])) {
   footer{
     background-color: #5eaaa8;
     color:white;
+}
+
+input[type=submit]
+{
+	display: inline-block;
+	padding: 12px 20px;
+	padding-bottom: 30px;
+	font-size: 18px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #f05945;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 9px #999;
+}
+
+input[type=submit]:hover {background-color: #5eaaa8}
+
+input[type=submit]:active {
+	background-color: #5eaaa8;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
 }
 </style>

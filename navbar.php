@@ -19,7 +19,8 @@
           <li><a href="products.php">Products</a></li>
           <li><a href="promotions.php">Promotions</a></li>
           <li><a href="about.php">About Us</a></li>
-         
+          <li> <a href="contact.php">Contact Us</a> </li>
+
         </ul>
         <form class="navbar-form navbar-center" action="#">
           <div class="input-group">
@@ -37,7 +38,7 @@
           <li ><a href="login.php">Log In</a></li>
           <li><a href="reg.php">Register</a></li>
           <li><a href="login.php">Logout</a></li>
-          
+
         </ul>
       </div>
     </nav>

@@ -34,7 +34,7 @@
           <input type="email" id="email" class="form-input"  required>
         </div>
 
-        <!-- Passwrod and confirm password -->
+        <!-- Password and confirm password -->
         <div class="horizontal-group">
           <div class="form-group left">
             <label for="password" class="label-title">Password *</label>

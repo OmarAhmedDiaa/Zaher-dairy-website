@@ -17,7 +17,7 @@
         <p><input type="password" name="password" placeholder="Password"></p>
         <p><input type="submit" value="Log in"></p>
         <p style="text-align:center;">Don't have an account?</p>
-        <a href="reg.php" style="text-align:center; margin-left:15px;"><u>Sign Up Here</u></a>
+        <a href="reg.php" style="text-align:center; margin-left:9px;"><u>Sign Up Here</u></a>
       </form>
     </div>
   </body>
@@ -26,9 +26,10 @@
 <?php
 			include "classes.php";
 			session_start();
-      $_SESSION['email'] = $_POST['email'];
+
 			if (isset($_POST['submit']))
       {
+        $_SESSION['email'] = $_POST['email'];
 			  $x = new Customer();
 				$x->login($_POST['email'], $_POST['password']);
 			}
