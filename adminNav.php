@@ -17,6 +17,8 @@
         <ul class="nav navbar-nav">
           <li><a href="adminHome.php">Home</a></li>
           <li> <a href="empDB.php">Employee Database</a> </li>
+          <li> <a href="productDB.php">Products Database</a> </li>
+          <li> <a href="">Orders status</a> </li>
           <li><a href="login.php">Logout</a></li>
         </ul>
       </div>
