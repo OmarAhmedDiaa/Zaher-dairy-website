@@ -36,10 +36,6 @@ if(!empty($_POST["send"])) {
           <p><span class="glyphicon glyphicon-earphone"></span> 19360</p>
           <p><span class="glyphicon glyphicon-phone"></span> +20 011 299 83 813</p>
           <p><span class="glyphicon glyphicon-envelope"></span> wecare@zaherdairy.com</p>
-					<a href="https://www.facebook.com/ZaherDairy/?ref=page_internal"><i class="fa fa-facebook-square"></i>
-          <a href="https://twitter.com/zaherdairy?lang=en"><i class="fa fa-twitter"></i>
-          <a href="https://www.instagram.com/zaherdairy/?hl=en"><i class="fa fa-instagram"></i>
-
         </div>
         <div class="col-lg-6">
             <div class="contact-form">
