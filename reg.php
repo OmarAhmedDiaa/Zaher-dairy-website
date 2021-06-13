@@ -8,8 +8,9 @@
 
   </head>
   <body>
+     
     <br><br><br>
-    <form class="signup-form"  method="post">
+    <form action="reg.php" class="signup-form"  method="post">
 
       <!-- form header -->
       <div class="form-header">
@@ -27,7 +28,7 @@
           </div>
           <div class="form-group right">
             <label class="label-title">Email</label>
-            <input type="email" class="form-input" required/>
+            <input type="email" name = "email" class="form-input" required/>
           </div>
         </div>
 
@@ -35,11 +36,12 @@
         <div class="horizontal-group">
           <div class="form-group left">
             <label class="label-title">Address</label>
-            <input type="text"  name="fname" class="form-input" required/>
+            <input type="text"  name="address" class="form-input" required/>
           </div>
           <div class="form-group right">
             <label class="label-title">Mobile Number</label>
-            <input type="number"  name="fname" class="form-input" required/>
+              
+            <input type="number"  name="mobile" class="form-input" required/>
           </div>
         </div>
 
@@ -51,7 +53,7 @@
           </div>
           <div class="form-group right">
             <label for="password" class="label-title">Confirm Password</label>
-            <input type="password" name="password" class="form-input" required>
+            <input type="password" name="cpassword" class="form-input" required>
           </div>
         </div>
 
@@ -177,16 +179,10 @@
   </body>
 </html>
 <?php
-
 if (isset($_POST['submit']))
 {
   include "db.php";
-  $fname=$_POST['fname'];
-  $lname=$_POST['lname'];
-  $email=$_POST['email'];
-  $password=$_POST['password'];
-
   $obj=new database();
-  $obj->records($fname,$lname,$email,$password);
+  $obj->records($_POST);
 }
   ?>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2021 at 01:23 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.2.24
+-- Generation Time: Jun 13, 2021 at 03:39 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -98,14 +98,22 @@ CREATE TABLE `products` (
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `first_name` varchar(32) NOT NULL,
-  `last_name` varchar(32) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `address` varchar(132) NOT NULL,
-  `mob_num` int(13) NOT NULL,
+  `mob_num` varchar(25) NOT NULL,
   `tel_num` int(10) NOT NULL,
-  `register_dateT` datetime NOT NULL DEFAULT current_timestamp()
+  `register_dateT` datetime NOT NULL DEFAULT current_timestamp(),
+  `role` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `first_name`, `email`, `password`, `address`, `mob_num`, `tel_num`, `register_dateT`, `role`) VALUES
+(2, 'Mostafa Khaled', 'Mostafa1810751@miuegypt.edu.eg', '73c0687840da850d08420868014bdbee', 'dasdas', '01020820065', 0, '2021-06-13 01:31:12', 'topadmin'),
+(8, 'umar diaa', 'omar@gmail.com', '202cb962ac59075b964b07152d234b70', '123123', '01020820065', 0, '2021-06-13 03:33:32', 'topadmin');
 
 --
 -- Indexes for dumped tables
@@ -189,7 +197,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
