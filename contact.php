@@ -28,7 +28,7 @@ if(!empty($_POST["send"])) {
   </head>
   <body>
     <div class="container-fluid1 bg-grey" style="margin-top:120px;margin-left">
-      <h2 class="text-center">CONTACT US</h2>
+      <h1>CONTACT US</h1><br>
       <div class="row">
         <div class="col-sm-5">
           <p>Contact us and we'll get back to you within 24 hours.</p>

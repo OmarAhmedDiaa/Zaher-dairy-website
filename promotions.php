@@ -10,7 +10,7 @@
     <?php include "navbar.php"; ?>
   </head>
   <body>
-    <br><br>
+    <br><br><br>
     <h1>Sales & Promotions</h1>
   </body>
 </html>
