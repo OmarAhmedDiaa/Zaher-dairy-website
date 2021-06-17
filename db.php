@@ -2,15 +2,15 @@
 
 class database
 {
- var $host="localhost";
- var $user ="root";
- var $password="";
- var $db="zaherdairy";
- var $tname="users";
+//  var $host="localhost";
+//  var $user ="root";
+//  var $password="";
+//  var $db="zaherdairy";
+//  var $tname="users";
 
  public function connect()
  {
- 	$conn=mysqli_connect($this->host,$this->user,$this->password,$this->db);
+ 	$conn=mysqli_connect("localhost","root","","zaherdairy")  or die("no conn");
  	return $conn;
  }
     
@@ -29,7 +29,7 @@ class database
  	mysqli_query($conn,$query);
  	echo"data is added ";
  }
-
+ 
 }
 
  ?>

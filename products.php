@@ -1,3 +1,38 @@
+<?php
+ 
+class Products{
+private $id;
+private $name;
+private $image;
+private $description;
+private $price;
+private $availability;
+private $category_id;
+
+public function __construct($id){
+  include("db.php");
+  $db = new database();
+  $db->connect();
+  $sql = "SELECT * FROM products WHERE id=".$id;
+  $result = mysqli_query($conn,$sql);
+ $no=mysqli_num_rows($result);
+ echo $no;
+  if($id != "")
+  {
+    if ($row = mysqli_fetch_array($result)){
+      $this->id=$row["id"];
+      $this->name=$row["name"];
+      $this->image=$row["description"];
+      $this->description=$row["price"];
+      $this->price=$row["availability"];
+      $this->category_id=$row["category_id"];
+
+
+    }
+  }
+}
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -163,7 +198,43 @@
     </div>
   </div>
 </div><br><br>
+<form class="zz"  method="post">
+
+      <!-- form header -->
+      <div class="form-header">
+        <h1>Log In</h1>
+      </div>
+
+      <!-- form body -->
+      <div class="form-body">
+
+        <!-- Firstname and Lastname -->
+        <div class="horizontal-group">
+            <label class="label-title">Email</label><br>
+            <input type="text"  name="email" class="form-input" required/>
+        </div>
+        <br>
+        <div class="horizontal-group">
+          <label for="password" class="label-title">Password</label><br>
+          <input type="password" name="password" class="form-input" required>
+        </div>
+        <input type="submit" name="submit">
+        <!-- <?php
+     //   include("db.php");
+//         $db = new database();
+//         $db->connect();
+//         if (isset($_POST['submit']))
+//         {
+//  $em=$_POST['email'];
+//  $pa=$_POST['password'];
+//  $sql = "INSERT INTO  products (name,image) VALUES ($em,$pa)";
+//   $result = mysqli_query($conn,$sql);
+//         }
+        ?> -->
+</form>
+      </div>
   </body>
+  
 </html>
 
 <style media="screen">
