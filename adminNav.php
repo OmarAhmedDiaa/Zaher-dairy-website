@@ -16,9 +16,12 @@
         </div>
         <ul class="nav navbar-nav">
           <li><a href="adminHome.php">Home</a></li>
+          <li><a href="addproducts.php">Add Products</a></li>
           <li> <a href="empDB.php">Users</a> </li>
-         <li> <a href="admins.php">Admins</a> </li>    
+         <li> <a href="admins.php">Admins</a> </li> 
+         <li> <a href="live%20search.php">Orders</a> </li>     
           <li><a href="login.php">Logout</a></li>
+
         </ul>
       </div>
     </nav>
