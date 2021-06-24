@@ -20,7 +20,7 @@ require_once('db.php');
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="main.css">
-  
+
   </head>
   <body>
     <br><br>
@@ -29,12 +29,11 @@ require_once('db.php');
   <div class="row content">
     <div class="col-sm-3 sidenav">
       <br>
-      
-     
+
+
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#section1">Account Info</a></li>
-        <li><a href="#section2">My Orders</a></li>
-        <li><a href="#section3">Favorites</a></li>
+
       </ul><br>
     </div>
 
@@ -44,10 +43,10 @@ require_once('db.php');
       $c = new database;
       $conn= $c->connect();
       $sql="SELECT * FROM users WHERE id ='$id'";
-      
+
       $result = mysqli_query($conn,$sql);
       $row = mysqli_fetch_array($result);
-      
+
 
        ?>
       <form method="post">
@@ -64,7 +63,7 @@ require_once('db.php');
     </div>
   </div>
 </div>
-   
+
   </body>
 </html>
 
