@@ -1,3 +1,13 @@
+<?php
+include('db.php');
+include ("classes.php");
+session_start();
+$cart = new Customer();
+if(isset($_GET['id'])){
+    $cart->removeItem();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -11,10 +21,40 @@
   </head>
   <body>
     <br><br>
-    <h1>Your cart is currently empty.</h1>
-    <span class="glyphicon glyphicon-shopping-cart" style="font-size:150px;"></span>
+      <div style = "margin-top: 80px;">
+      <a href="products.php" style="color:#f05945;font-size:30px;">View Products here.</a>
+          </div>
+    <div style = "margin-top: -30px;">
     <br><br>
-    <a href="products.php" style="color:#f05945;font-size:30px;">View Products here.</a>
+    
+      <table class = "table table-condensed">
+      <tr> 
+          <th style = "text-align: center;"> name </th>
+          <th style = "text-align: center;"> quantity </th>
+          <th style = "text-align: center;"> price </th>
+          <th style = "text-align: center;"> action </th>
+      </tr>
+    <?php
+           $db = new database();
+         $con = $db->connect();
+        $id = $_SESSION['Logged_in_ID'];  
+      $result = mysqli_query($con, "SELECT * FROM cart WHERE userid = $id");
+      while($res = mysqli_fetch_array($result))
+      {
+          print "<tr>";
+          print "<td>".$res['pname']."</td>";
+          print "<td>".$res['quantity']."</td>";
+          print "<td>".$res['totalprice']."</td>";
+          ?>
+          <td><a id="idTag" href="cart.php?id=<?php echo $res['xid']; ?>"><button value="delete" name="delete" class="btn btn-danger"> Delete </button></a></td>
+          <?php
+          print "</tr>";
+         
+      }
+    ?>
+    </table>
+        <td><a id="idTag" href="cart.php?id=<?php echo $id; ?>"><button value="Purchase" name="delete" class="btn btn-success"> Purchase </button></a></td>
+      </div>
   </body>
 </html>
 
