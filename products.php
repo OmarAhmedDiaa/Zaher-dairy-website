@@ -10,7 +10,6 @@ private $availability;
 private $category_id;
 
 function __construct($id){
-  include("db.php");
   $db = new database();
   $db->connect();
   $sql = "SELECT * FROM products WHERE id=".$id;
@@ -184,8 +183,6 @@ function __construct($id){
     </div>
   </div>
 </div><br><br>
-
-      </div>
   </body>
   
 </html>
