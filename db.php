@@ -1,5 +1,4 @@
 <?php
-
 class database
 {
 //  var $host="localhost";
@@ -10,7 +9,7 @@ class database
 
  public function connect()
  {
- 	$conn=mysqli_connect("localhost","root","","zaherdairy")  or die("no conn");
+ 	$conn=mysqli_connect("localhost","root","","zaherdairy") or die("no conn");
  	return $conn;
  }
     
@@ -24,7 +23,7 @@ class database
     $password = md5($_POST['password']);
     $cpassword = $_POST['cpassword']; 
          
- 	$query="insert into " .$this->tname. "(first_name, email, address , mob_num, password, role) values ('".$fname."','".$email."','".$address."', '$mob', '$password', 'user')";
+ 	$query="insert into users (first_name, email, address , mob_num, password, role) values ('".$fname."','".$email."','".$address."', '$mob', '$password', 'user')";
 
  	mysqli_query($conn,$query);
  	echo"data is added ";
