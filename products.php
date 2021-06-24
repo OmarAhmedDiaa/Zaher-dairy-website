@@ -1,35 +1,14 @@
 <?php
-
-class Products{
-private $id;
-private $name;
-private $image;
-private $description;
-private $price;
-private $availability;
-private $category_id;
-
-function __construct($id){
-  $db = new database();
-  $db->connect();
-  $sql = "SELECT * FROM products WHERE id=".$id;
-  $result = mysqli_query($conn,$sql);
-  if($id != "")
-  {
-    if ($row = mysqli_fetch_array($result)){
-      $this->id=$row["id"];
-      $this->name=$row["name"];
-      $this->image=$row["description"];
-      $this->description=$row["price"];
-      $this->price=$row["availability"];
-      $this->category_id=$row["category_id"];
-
-
-    }
-  }
-}
+include('db.php');
+include ("classes.php");
+$add = new Customer();
+if(isset($_GET['id'])){
+    
+    $add->addToCart($_POST);
+    
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -68,129 +47,41 @@ function __construct($id){
       <input type="submit" name="" value="Search">
     </form>
     <br>
-    <div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Kiri Cheese</div>
-        <div class="panel-body"><img src="pics/products/kiri.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">26.50 EGP <br><br>
-          <button type="button" name="button">Add to Cart</button></div>
-      </div>
+      <div class="container" >
+          <div class="row">
+       <?php  
+         
+         
+         $db = new database();
+         $con = $db->connect();
+                $query = "SELECT * FROM products ORDER BY id ASC";  
+                $result = mysqli_query($con, $query);  
+                if(mysqli_num_rows($result) > 0)  
+                {  
+                     while($row = mysqli_fetch_array($result))  
+                     {  
+                ?>  
+                   
+                     
+  <form action = "products.php?id=<?php echo $row["id"]; ?>" method = "post">
+    <div class="col-md-4"> 
+      <ul style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:15px; align=center">
+        <?php print $row['name']; ?>
+        <img src="pics/products/<?php print $row['image'];?>" style = "max-width: 100%; , max-height: 100%;" class="img-responsive" alt="Image">
+        <?php print $row['price'];?> <br><br>
+          <input type = "number" name = "quantity" class = "form-control" style = "width: 50px; margin-left: 43%;" min = "1" max = "20" value = "0"> <br><br>
+          <input type = "submit" class = "btn btn-success" value = "Add to cart">
+          
+    </ul>  
     </div>
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Ibn Al-Mostashar Coffee</div>
-        <div class="panel-body"><img src="pics/products/coffee.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">50 EGP <br><br>
-          <button type="button" name="button">Add to Cart</button></div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Eid Sweets Box</div>
-        <div class="panel-body"><img src="pics/products/eid.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">150 EGP <br><br>
-          <button type="button" name="button">Add to Cart</button></div>
-      </div>
-    </div>
-  </div>
-</div><br>
+      </form>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Local Cow Ghee</div>
-        <div class="panel-body"><img src="pics/products/ghee.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">70 EGP <br><br>
-          <button type="button" name="button">Add to Cart</button></div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">1 Kg Honey</div>
-        <div class="panel-body"><img src="pics/products/honey.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">120 EGP <br><br>
-          <button type="button" name="button">Add to Cart</button></div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">1 Litre Full Cream Milk</div>
-        <div class="panel-body"><img src="pics/products/milk.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">20 EGP <br><br>
-          <button type="button" name="button">Add to Cart</button></div>
-      </div>
-    </div>
-  </div>
-</div><br><br>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">10 Loaves Fino Bread</div>
-        <div class="panel-body"><img src="pics/products/bread.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">5 EGP <br><br>
-          <button type="button" name="button">Add to Cart</button></div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">1/2 Kg 0% Fat Qarish Cheese</div>
-        <div class="panel-body"><img src="pics/products/qarish.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">15 EGP <br><br>
-          <button type="button" name="button">Add to Cart</button></div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">1 Kg Cow Butter</div>
-        <div class="panel-body"><img src="pics/products/butter.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">90 LE <br><br>
-          <button type="button" name="button">Add to Cart</button></div>
-      </div>
-    </div>
-  </div>
-</div><br>
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">1 Kg Balah El-sham</div>
-        <div class="panel-body"><img src="pics/products/bala7.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">40 EGP <br><br>
-          <button type="button" name="button">Add to Cart</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">1/2 Kg Zaher's Light yoghurt</div>
-        <div class="panel-body"><img src="pics/products/yoghurt.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">30 EGP <br><br>
-          <button type="button" name="button">Add to Cart</button></div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">3-Scoop Ice-cream Bowl</div>
-        <div class="panel-body"><img src="pics/products/ice.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">25 EGP <br><br>
-          <button type="button" name="button">Add to Cart</button></div>
-      </div>
-    </div>
-  </div>
-</div><br><br>
+                <?php  
+                     }  
+                }  
+                ?>  
+                   </div>
+                         
+</div>
   </body>
-  
 </html>
-
-<style media="screen">
-  button{
-    background-color: #F05945;
-    border-radius: 4px;
-    color:#fff;
-  }
-</style>
