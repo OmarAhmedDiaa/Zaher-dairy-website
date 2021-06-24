@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -17,7 +22,7 @@
         <ul class="nav navbar-nav">
           <li><a href="home.php">Home</a></li>
           <li><a href="products.php">Products</a></li>
-          <li><a href="promotions.php">Promotions</a></li>
+         <!-- <li><a href="promotions.php">Promotions</a></li> -->
           <li><a href="about.php">About Us</a></li>
           <li> <a href="contact.php">Contact Us</a> </li>
 
@@ -33,13 +38,20 @@
           </div>
         </form>
         <ul class="nav navbar-nav navbar-right">
+          <li><?php if($_SESSION)  ?><a href="account.php"><span class="glyphicon glyphicon-user"></span><?php  if($_SESSION) echo $_SESSION['name']; ?></a></li>
+          <?php if(!($_SESSION)){   ?>
+          <li>
           <li> <a href="messages.php">Messages</a> </li>
-          <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>
-          <li><a href="account.php"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
           <li ><a href="login.php">Log In</a></li>
           <li><a href="reg.php">Register</a></li>
+          <?php
+          }
+          ?>
+          <?php if($_SESSION){ ?>
+            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>
           <li><a href="login.php">Logout</a></li>
-
+         
+         <?php }  ?>
         </ul>
       </div>
     </nav>
